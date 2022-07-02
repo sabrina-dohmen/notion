@@ -1,0 +1,64 @@
+<html> 
+<head>
+    <title>Fecha Actual</title> 
+    <style>
+        body{
+            background-color: #212121;  
+        }
+
+        #saludo {
+            float: left;
+            width: 50%;
+            font-size:large;
+            font-style: italic;
+            color: rgb(131, 131, 131);
+        }
+
+        #fecha {
+            float: right;
+            width: 50%;
+            text-align: right;
+            font-family: monospace;
+            font-size: large;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="saludo"> </div>
+        <div id="fecha"> </div>
+    </div>
+</body>
+
+<script>
+    var weekday = new Array(7);
+    weekday[0] = "DOM";
+    weekday[1] = "LUN";
+    weekday[2] = "MAR";
+    weekday[3] = "MIE";
+    weekday[4] = "JUE";
+    weekday[5] = "VIE";
+    weekday[6] = "SAB";
+    
+    var today = new Date();
+    var hrs = today.getHours();
+    var day = today.getDate();
+    var month = today.getMonth()+1;
+    var dayOfWeek = weekday[today.getDay()];    
+    
+    if(day<10) day=`0${day}`;  
+    if(month<10) month=`0${month}`;
+
+    var date = `${dayOfWeek} ${day}/${month}/${today.getFullYear()}`;
+
+    var greet;
+    if (hrs < 13) greet = 'Buen día';
+    else if (hrs >= 13 && hrs <= 19) greet = 'Buenas tardes';
+    else if (hrs >= 19 && hrs <= 24) greet = 'Buenas noches';
+
+    document.getElementById('fecha').innerHTML = date
+    document.getElementById('saludo').innerHTML = greet
+
+</script> 
+</html>
