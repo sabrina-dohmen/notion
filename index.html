@@ -3,31 +3,35 @@
     <title>Fecha Actual</title> 
     <style>
         body{
-            background-color: #212121;  
+            background-color: #212121;
+            text-align: center;
         }
-
         #saludo {
-            float: left;
-            width: 50%;
+            background-color: #212121;
+            /* float: left;
+            width: 50%; */
             font-size:large;
             font-style: italic;
             color: rgb(131, 131, 131);
+            padding: 2px;
         }
 
         #fecha {
-            float: right;
+            background-color: #212121;
+            /* float: right;
             width: 50%;
-            text-align: right;
+            text-align: right; */
             font-family: monospace;
-            font-size: large;
+            font-size: x-large;
             color: white;
+            padding: 2px;
         }
     </style>
 </head>
 <body>
-    <div>
-        <div id="saludo"> </div>
+    <div>       
         <div id="fecha"> </div>
+        <div id="saludo"> </div>
     </div>
 </body>
 
@@ -50,12 +54,12 @@
     if(day<10) day=`0${day}`;  
     if(month<10) month=`0${month}`;
 
-    var date = `${dayOfWeek} ${day}/${month}/${today.getFullYear()}`;
+    var date = `${dayOfWeek} ${day}/${month}/${today.getFullYear()} `;
 
     var greet;
-    if (hrs < 13) greet = 'Buen día';
-    else if (hrs >= 13 && hrs <= 19) greet = 'Buenas tardes';
-    else if (hrs >= 19 && hrs <= 24) greet = 'Buenas noches';
+    if (hrs < 13) greet = ' Buen día';
+    else if (hrs >= 13 && hrs <= 19) greet = ' Buenas tardes';
+    else if (hrs >= 19 && hrs <= 24) greet = ' Buenas noches';
 
     document.getElementById('fecha').innerHTML = date
     document.getElementById('saludo').innerHTML = greet
